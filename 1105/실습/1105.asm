@@ -15,7 +15,7 @@ main PROC
     INVOKE GetStdHandle, -11
     mov ebx, eax
 
-    INVOKE WriteConsoleA, ebx, ADDR msg, 41, ADDR written, 0
+    INVOKE WriteConsoleA, ebx, ADDR msg, LENGTHOF msg - 1, ADDR written, 0
 
     INVOKE ExitProcess, 0
 main ENDP
